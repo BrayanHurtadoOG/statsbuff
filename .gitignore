@@ -1,0 +1,27 @@
+# Gradle
+.gradle/
+build/
+
+# MCreator local metadata (history, backups, user settings)
+.mcreator/
+
+# MCreator run configurations (local only)
+run/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
