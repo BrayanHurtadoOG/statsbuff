@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "statsbuff:block/bloque_prueba",
+    "up": "statsbuff:block/bloque_prueba",
+    "north": "statsbuff:block/bloque_prueba",
+    "east": "statsbuff:block/bloque_prueba",
+    "south": "statsbuff:block/bloque_prueba",
+    "west": "statsbuff:block/bloque_prueba",
+    "particle": "statsbuff:block/bloque_prueba"
+  },
+  "render_type": "solid"
+}
