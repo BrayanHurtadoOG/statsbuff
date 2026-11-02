@@ -40,6 +40,7 @@ public class StatsbuffMod {
 
 	public StatsbuffMod(FMLJavaModLoadingContext context) {
 		// Start of user code block mod constructor
+		addNetworkMessage(TeleportGodPacket.class, TeleportGodPacket::encode, TeleportGodPacket::decode, TeleportGodPacket::handle);
 		// End of user code block mod constructor
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = context.getModEventBus();

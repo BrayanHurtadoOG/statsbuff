@@ -1,4 +1,6 @@
 {
   "block.statsbuff.bloque_prueba": "Bloque Prueba",
-  "item.statsbuff.espada_chetada": "Espada Chetada"
+  "item.statsbuff.espada_chetada": "Espada Chetada",
+  "key.categories.statsbuff": "StatsBuff",
+  "key.statsbuff.teleport": "Teletransporte divino"
 }
