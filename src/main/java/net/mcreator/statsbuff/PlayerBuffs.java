@@ -12,13 +12,10 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 
-import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerNameFormatEvent;
-import net.minecraftforge.event.entity.player.PlayerTabListNameFormatEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -112,19 +109,13 @@ public class PlayerBuffs {
 	}
 
 	@SubscribeEvent
-	public static void onServerChat(ServerChatEvent event) {
-		// En el chat no eres "<Jugador>": eres "Dios <Jugador>, Entidad Omnipotente".
-		event.setUsername(godName(event.getPlayer().getName().getString()));
+	public static void onNameFormat(PlayerEvent.NameFormat event) {
+		// Nombre sobre la cabeza Y en el chat (el chat decora con getDisplayName()).
+		event.setDisplayname(godName(event.getUsername().getString()));
 	}
 
 	@SubscribeEvent
-	public static void onNameFormat(PlayerNameFormatEvent event) {
-		// Nombre sobre la cabeza con el titulo divino.
-		event.setDisplayname(godName(event.getUsername()));
-	}
-
-	@SubscribeEvent
-	public static void onTabListNameFormat(PlayerTabListNameFormatEvent event) {
+	public static void onTabListNameFormat(PlayerEvent.TabListNameFormat event) {
 		// Nombre en la lista de jugadores (tab) con el titulo divino.
 		event.setDisplayName(godName(event.getPlayer().getName().getString()));
 	}
