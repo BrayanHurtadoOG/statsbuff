@@ -20,8 +20,14 @@ import com.mojang.blaze3d.platform.InputConstants;
 @Mod.EventBusSubscriber(modid = StatsbuffMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class GodClientKeys {
 
-	public static final KeyMapping TELEPORT_KEY = new KeyMapping("key.statsbuff.teleport", KeyConflictContext.IN_GAME,
+	public static final KeyMapping TELEPORT_KEY = new KeyMapping("key.statsbuff.teleport",
 			InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_G, "key.categories.statsbuff");
+
+	static {
+		// En Forge 1.20.1 KeyMapping ya no acepta el contexto en el constructor:
+		// se asigna con setKeyConflictContext (viene de IForgeKeyMapping).
+		TELEPORT_KEY.setKeyConflictContext(KeyConflictContext.IN_GAME);
+	}
 
 	@SubscribeEvent
 	public static void registerKeys(RegisterKeyMappingsEvent event) {

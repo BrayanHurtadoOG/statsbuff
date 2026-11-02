@@ -117,6 +117,6 @@ public class PlayerBuffs {
 	@SubscribeEvent
 	public static void onTabListNameFormat(PlayerEvent.TabListNameFormat event) {
 		// Nombre en la lista de jugadores (tab) con el titulo divino.
-		event.setDisplayName(godName(event.getPlayer().getName().getString()));
+		event.setDisplayName(godName(event.getEntity().getName().getString()));
 	}
 }
